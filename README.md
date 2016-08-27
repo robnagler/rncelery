@@ -15,7 +15,8 @@ bash run.sh
 
 There are two logs saved from runs with Python 2.7.10 in a Pyenv on Fedora 21:
 
-* [celery-3.1.23.log](https://github.com/robnagler/rncelery/blob/master/celery-3.1.23.log)* [celery-4rc3.log](https://github.com/robnagler/rncelery/blob/master/celery-4rc3.log)
+* [celery-3.1.23.log](https://github.com/robnagler/rncelery/blob/master/celery-3.1.23.log)
+* [celery-4rc3.log](https://github.com/robnagler/rncelery/blob/master/celery-4rc3.log)
 
 #### License
 
