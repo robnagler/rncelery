@@ -7,10 +7,11 @@
 from __future__ import absolute_import, division, print_function
 import rncelery.server
 
-def default_command():
+def default_command(host, port):
     rncelery.server.app.run(
+        host=host,
+        port=int(port),
         debug=True,
-        port=8000,
         threaded=True,
         use_reloader=False,
     )

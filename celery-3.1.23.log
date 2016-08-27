@@ -1,0 +1,235 @@
+[2.7.10;@v rncelery]$ bash run.sh
+/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/celery/apps/worker.py:161: CDeprecationWarning:
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+ -------------- celery@v v3.1.23 (Cipater)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7f5a7477fe10
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+ * Running on http://127.0.0.1:8000/
+[2016-08-27 20:14:14,416: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:14:14,427: INFO/MainProcess] mingle: searching for neighbors
+[2016-08-27 20:14:15,459: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[30857] bd009f77-4920-4349-82a5-e6e49804c927: started
+[2016-08-27 20:14:16,076: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[bd009f77-4920-4349-82a5-e6e49804c927]
+[30857] bd009f77-4920-4349-82a5-e6e49804c927: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:16] "GET /start HTTP/1.1" 200 -
+[30857] c46eed77-536d-47ea-bd03-1da2b01a5ea4: started
+[30857] bd009f77-4920-4349-82a5-e6e49804c927: ready=False state=STARTED
+[30857] c46eed77-536d-47ea-bd03-1da2b01a5ea4: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:17] "GET /start HTTP/1.1" 200 -
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: started
+[30857] bd009f77-4920-4349-82a5-e6e49804c927: ready=False state=STARTED
+[30857] c46eed77-536d-47ea-bd03-1da2b01a5ea4: ready=False state=PENDING
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:18] "GET /start HTTP/1.1" 200 -
+[2016-08-27 20:14:21,097: INFO/MainProcess] Task rncelery.tasks.start_simulation[bd009f77-4920-4349-82a5-e6e49804c927] succeeded in 5.02010513301s: None
+[2016-08-27 20:14:21,097: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[c46eed77-536d-47ea-bd03-1da2b01a5ea4]
+[30857] bd009f77-4920-4349-82a5-e6e49804c927: stopped
+[30857] c46eed77-536d-47ea-bd03-1da2b01a5ea4: ready=False state=STARTED
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:21] "GET /status HTTP/1.1" 200 -
+[30857] c46eed77-536d-47ea-bd03-1da2b01a5ea4: ready=False state=STARTED
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:24] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:14:26,160: INFO/MainProcess] Task rncelery.tasks.start_simulation[c46eed77-536d-47ea-bd03-1da2b01a5ea4] succeeded in 5.03024860402s: None
+[2016-08-27 20:14:26,162: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[b42c1a04-f13a-4214-8208-b09e6606c8cd]
+[30857] c46eed77-536d-47ea-bd03-1da2b01a5ea4: stopped
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:27] "GET /status HTTP/1.1" 200 -
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:30] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:14:31,214: INFO/MainProcess] Task rncelery.tasks.start_simulation[b42c1a04-f13a-4214-8208-b09e6606c8cd] succeeded in 5.01899326101s: None
+[30857] b42c1a04-f13a-4214-8208-b09e6606c8cd: stopped
+127.0.0.1 - - [27/Aug/2016 20:14:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2016 20:14:36] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[2.7.10;@v rncelery]$ bash run.sh
+/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/celery/apps/worker.py:161: CDeprecationWarning:
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+ -------------- celery@v v3.1.23 (Cipater)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7ff091626e10
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+ * Running on http://127.0.0.1:8000/
+[2016-08-27 20:14:51,499: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:14:51,510: INFO/MainProcess] mingle: searching for neighbors
+[2016-08-27 20:14:52,524: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[31085] 56509449-d1fa-46a4-be9c-649e6957f8fc: started
+[2016-08-27 20:14:53,142: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[56509449-d1fa-46a4-be9c-649e6957f8fc]
+[31085] 56509449-d1fa-46a4-be9c-649e6957f8fc: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:53] "GET /start HTTP/1.1" 200 -
+[31085] 187833e0-5af4-4583-97a3-5d0e00d206b1: started
+[31085] 56509449-d1fa-46a4-be9c-649e6957f8fc: ready=False state=STARTED
+[31085] 187833e0-5af4-4583-97a3-5d0e00d206b1: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:54] "GET /start HTTP/1.1" 200 -
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: started
+[31085] 56509449-d1fa-46a4-be9c-649e6957f8fc: ready=False state=STARTED
+[31085] 187833e0-5af4-4583-97a3-5d0e00d206b1: ready=False state=PENDING
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:55] "GET /start HTTP/1.1" 200 -
+[2016-08-27 20:14:58,164: INFO/MainProcess] Task rncelery.tasks.start_simulation[56509449-d1fa-46a4-be9c-649e6957f8fc] succeeded in 5.021894915s: None
+[2016-08-27 20:14:58,166: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[187833e0-5af4-4583-97a3-5d0e00d206b1]
+[31085] 56509449-d1fa-46a4-be9c-649e6957f8fc: stopped
+[31085] 187833e0-5af4-4583-97a3-5d0e00d206b1: ready=False state=STARTED
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:14:58] "GET /status HTTP/1.1" 200 -
+[31085] 187833e0-5af4-4583-97a3-5d0e00d206b1: ready=False state=STARTED
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:01] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:15:03,224: INFO/MainProcess] Task rncelery.tasks.start_simulation[187833e0-5af4-4583-97a3-5d0e00d206b1] succeeded in 5.02607133499s: None
+[2016-08-27 20:15:03,226: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[5edb3e99-8853-4428-910b-9ee6f84ec810]
+[31085] 187833e0-5af4-4583-97a3-5d0e00d206b1: stopped
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:04] "GET /status HTTP/1.1" 200 -
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:07] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:15:08,299: INFO/MainProcess] Task rncelery.tasks.start_simulation[5edb3e99-8853-4428-910b-9ee6f84ec810] succeeded in 5.020069955s: None
+[31085] 5edb3e99-8853-4428-910b-9ee6f84ec810: stopped
+127.0.0.1 - - [27/Aug/2016 20:15:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2016 20:15:13] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[2.7.10;@v rncelery]$ bash run.sh
+/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/celery/apps/worker.py:161: CDeprecationWarning:
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+ -------------- celery@v v3.1.23 (Cipater)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7ff9f09efe10
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+ * Running on http://127.0.0.1:8000/
+[2016-08-27 20:15:21,161: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:15:21,172: INFO/MainProcess] mingle: searching for neighbors
+[2016-08-27 20:15:22,197: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[31453] 71ea93db-a13b-4809-8a7a-a3a482fd446d: started
+[2016-08-27 20:15:22,785: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[71ea93db-a13b-4809-8a7a-a3a482fd446d]
+[31453] 71ea93db-a13b-4809-8a7a-a3a482fd446d: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:22] "GET /start HTTP/1.1" 200 -
+[31453] 40107baf-5469-4f38-8736-0236c7017ea3: started
+[31453] 71ea93db-a13b-4809-8a7a-a3a482fd446d: ready=False state=STARTED
+[31453] 40107baf-5469-4f38-8736-0236c7017ea3: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:23] "GET /start HTTP/1.1" 200 -
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: started
+[31453] 71ea93db-a13b-4809-8a7a-a3a482fd446d: ready=False state=STARTED
+[31453] 40107baf-5469-4f38-8736-0236c7017ea3: ready=False state=PENDING
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:24] "GET /start HTTP/1.1" 200 -
+[2016-08-27 20:15:27,806: INFO/MainProcess] Task rncelery.tasks.start_simulation[71ea93db-a13b-4809-8a7a-a3a482fd446d] succeeded in 5.02092522199s: None
+[2016-08-27 20:15:27,809: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[40107baf-5469-4f38-8736-0236c7017ea3]
+[31453] 71ea93db-a13b-4809-8a7a-a3a482fd446d: stopped
+[31453] 40107baf-5469-4f38-8736-0236c7017ea3: ready=False state=STARTED
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:27] "GET /status HTTP/1.1" 200 -
+[31453] 40107baf-5469-4f38-8736-0236c7017ea3: ready=False state=STARTED
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:30] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:15:32,868: INFO/MainProcess] Task rncelery.tasks.start_simulation[40107baf-5469-4f38-8736-0236c7017ea3] succeeded in 5.02780725801s: None
+[2016-08-27 20:15:32,870: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f]
+[31453] 40107baf-5469-4f38-8736-0236c7017ea3: stopped
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:33] "GET /status HTTP/1.1" 200 -
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:15:36] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:15:37,921: INFO/MainProcess] Task rncelery.tasks.start_simulation[cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f] succeeded in 5.01847085101s: None
+[31453] cc647dad-f3e6-4d2e-b1bc-47bd8a1bcb1f: stopped
+127.0.0.1 - - [27/Aug/2016 20:15:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2016 20:15:42] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[2.7.10;@v rncelery]$

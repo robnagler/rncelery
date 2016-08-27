@@ -44,7 +44,7 @@ class _Celery(object):
     def all_status(cls):
         """Job is actually running"""
         with cls._lock:
-            for self in cls._task:
+            for self in list(cls._task):
                 self._status()
 
     def _status(self):

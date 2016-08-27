@@ -1,0 +1,303 @@
+[celery4;@v rncelery]$ bash run.sh
+
+ -------------- celery@v v4.0.0rc3 (0today8)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One 2016-08-27 20:08:35
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7f242df9f410
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+[2016-08-27 20:08:35,841: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:08:35,854: INFO/MainProcess] mingle: searching for neighbors
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[2016-08-27 20:08:36,881: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[2016-08-27 20:08:36,906: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[70eb4dc2-4512-46a4-bc72-c7dfa7d10891]
+[28765] a1068047-8451-4384-8c11-751ab99b9311: started
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:37] "GET /start HTTP/1.1" 200 -
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: started
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=PENDING
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:38] "GET /start HTTP/1.1" 200 -
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: started
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=PENDING
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=False state=PENDING
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:39] "GET /start HTTP/1.1" 200 -
+[2016-08-27 20:08:42,037: INFO/PoolWorker-1] Task rncelery.tasks.start_simulation[70eb4dc2-4512-46a4-bc72-c7dfa7d10891] succeeded in 5.02765560002s: None
+[2016-08-27 20:08:42,041: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[0afd1203-6ea9-4046-8aa8-dbf91adeaed2]
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=PENDING
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=False state=PENDING
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:42] "GET /status HTTP/1.1" 200 -
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=PENDING
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=False state=PENDING
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:45] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:08:47,108: INFO/PoolWorker-2] Task rncelery.tasks.start_simulation[0afd1203-6ea9-4046-8aa8-dbf91adeaed2] succeeded in 5.01986116299s: None
+[2016-08-27 20:08:47,110: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[a1068047-8451-4384-8c11-751ab99b9311]
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=STARTED
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=False state=PENDING
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:48] "GET /status HTTP/1.1" 200 -
+[28765] a1068047-8451-4384-8c11-751ab99b9311: ready=False state=PENDING
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=False state=PENDING
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:51] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:08:52,173: INFO/PoolWorker-3] Task rncelery.tasks.start_simulation[a1068047-8451-4384-8c11-751ab99b9311] succeeded in 5.01870089298s: None
+[2016-08-27 20:08:52,176: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[a10dd62a-1520-4c00-a112-36562c6c72ac]
+[28765] a1068047-8451-4384-8c11-751ab99b9311: stopped
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:54] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:08:57,239: INFO/PoolWorker-4] Task rncelery.tasks.start_simulation[a10dd62a-1520-4c00-a112-36562c6c72ac] succeeded in 5.01963981101s: None
+[2016-08-27 20:08:57,282: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[5d080bec-729c-4a0a-b37d-ad1012855761]
+[28765] a10dd62a-1520-4c00-a112-36562c6c72ac: ready=True state=SUCCESS
+[28765] 5d080bec-729c-4a0a-b37d-ad1012855761: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:08:57] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[celery4;@v rncelery]$ [2016-08-27 20:09:02,306: INFO/PoolWorker-5] Task rncelery.tasks.start_simulation[5d080bec-729c-4a0a-b37d-ad1012855761] succeeded in 5.020212053s: None
+[2016-08-27 20:09:02,386: ERROR/MainProcess] Error on stopping Pool: TypeError('must be string or buffer, not _io.BytesIO',)
+Traceback (most recent call last):
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/bootsteps.py", line 157, in send_all
+    fun(parent, *args)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/bootsteps.py", line 380, in stop
+    return self.obj.stop()
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/concurrency/base.py", line 125, in stop
+    self.on_stop()
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/concurrency/prefork.py", line 145, in on_stop
+    self._pool.join()
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/pool.py", line 1586, in join
+    stop_if_not_current(self._result_handler)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/pool.py", line 149, in stop_if_not_current
+    thread.stop(timeout)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/pool.py", line 510, in stop
+    self.on_stop_not_started()
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/concurrency/asynpool.py", line 323, in on_stop_not_started
+    on_state_change,
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/concurrency/asynpool.py", line 347, in _flush_outqueue
+    task = reader.recv()
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/connection.py", line 281, in recv
+    return ForkingPickler.loadbuf(buf)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/reduction.py", line 87, in loadbuf
+    return cls.loads(buf)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/reduction.py", line 91, in loads
+    return loads(buf)
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/pickle.py", line 1381, in loads
+    file = StringIO(str)
+TypeError: must be string or buffer, not _io.BytesIO
+Traceback (most recent call last):
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/multiprocessing/util.py", line 274, in _run_finalizers
+    finalizer()
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/multiprocessing/util.py", line 207, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/pool.py", line 1626, in _terminate_pool
+    cls._help_stuff_finish(*help_stuff_finish_args)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/celery/concurrency/asynpool.py", line 1280, in _help_stuff_finish
+    fileno_to_proc[fd].inq._reader.recv()
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/connection.py", line 281, in recv
+    return ForkingPickler.loadbuf(buf)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/reduction.py", line 87, in loadbuf
+    return cls.loads(buf)
+  File "/home/vagrant/.pyenv/versions/2.7.10/envs/celery4/lib/python2.7/site-packages/billiard/reduction.py", line 91, in loads
+    return loads(buf)
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/pickle.py", line 1381, in loads
+    file = StringIO(str)
+TypeError: must be string or buffer, not _io.BytesIO
+
+[celery4;@v rncelery]$ bash run.sh
+
+ -------------- celery@v v4.0.0rc3 (0today8)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One 2016-08-27 20:09:16
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7fd94cc2a410
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+[2016-08-27 20:09:16,159: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:09:16,172: INFO/MainProcess] mingle: searching for neighbors
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[2016-08-27 20:09:17,198: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[2016-08-27 20:09:17,222: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[5d080bec-729c-4a0a-b37d-ad1012855761]
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: started
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:17] "GET /start HTTP/1.1" 200 -
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: started
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: ready=False state=PENDING
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:18] "GET /start HTTP/1.1" 200 -
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: started
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: ready=False state=PENDING
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: ready=False state=PENDING
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:19] "GET /start HTTP/1.1" 200 -
+[2016-08-27 20:09:22,345: INFO/PoolWorker-1] Task rncelery.tasks.start_simulation[5d080bec-729c-4a0a-b37d-ad1012855761] succeeded in 5.020332888s: None
+[2016-08-27 20:09:22,348: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[489f0ef9-5719-4e2f-a0d6-fd90a34aed88]
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: ready=False state=STARTED
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: ready=False state=PENDING
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:23] "GET /status HTTP/1.1" 200 -
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: ready=False state=PENDING
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: ready=False state=PENDING
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:26] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:09:27,431: INFO/PoolWorker-2] Task rncelery.tasks.start_simulation[489f0ef9-5719-4e2f-a0d6-fd90a34aed88] succeeded in 5.03813316501s: None
+[2016-08-27 20:09:27,434: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[6e628035-036e-4951-ad39-aaf7e923c2ed]
+[29044] 489f0ef9-5719-4e2f-a0d6-fd90a34aed88: stopped
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:29] "GET /status HTTP/1.1" 200 -
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: ready=False state=PENDING
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:32] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:09:32,497: INFO/PoolWorker-3] Task rncelery.tasks.start_simulation[6e628035-036e-4951-ad39-aaf7e923c2ed] succeeded in 5.01877721498s: None
+[2016-08-27 20:09:32,542: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[be25aa52-5931-402e-93d3-4369a75299dd]
+[29044] 6e628035-036e-4951-ad39-aaf7e923c2ed: stopped
+127.0.0.1 - - [27/Aug/2016 20:09:35] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:09:37,567: INFO/PoolWorker-4] Task rncelery.tasks.start_simulation[be25aa52-5931-402e-93d3-4369a75299dd] succeeded in 5.02143758s: None
+[29044] be25aa52-5931-402e-93d3-4369a75299dd: ready=True state=SUCCESS
+127.0.0.1 - - [27/Aug/2016 20:09:38] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[celery4;@v rncelery]$ bash run.sh
+
+ -------------- celery@v v4.0.0rc3 (0today8)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One 2016-08-27 20:09:40
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7f14d16b0410
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+[2016-08-27 20:09:40,853: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:09:40,864: INFO/MainProcess] mingle: searching for neighbors
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[2016-08-27 20:09:41,908: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[29264] 23303316-5a44-4461-b637-6fd346b1b863: started
+[2016-08-27 20:09:42,620: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[23303316-5a44-4461-b637-6fd346b1b863]
+[29264] 23303316-5a44-4461-b637-6fd346b1b863: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:42] "GET /start HTTP/1.1" 200 -
+[29264] 7d55ef1d-7970-44e9-8941-953c80b6d811: started
+[29264] 23303316-5a44-4461-b637-6fd346b1b863: ready=False state=PENDING
+[29264] 7d55ef1d-7970-44e9-8941-953c80b6d811: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:43] "GET /start HTTP/1.1" 200 -
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: started
+[29264] 23303316-5a44-4461-b637-6fd346b1b863: ready=False state=STARTED
+[29264] 7d55ef1d-7970-44e9-8941-953c80b6d811: ready=False state=PENDING
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:44] "GET /start HTTP/1.1" 200 -
+[29264] 23303316-5a44-4461-b637-6fd346b1b863: ready=False state=PENDING
+[29264] 7d55ef1d-7970-44e9-8941-953c80b6d811: ready=False state=PENDING
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:47] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:09:48,948: INFO/PoolWorker-1] Task rncelery.tasks.start_simulation[23303316-5a44-4461-b637-6fd346b1b863] succeeded in 5.022522863s: None
+[2016-08-27 20:09:48,950: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[7d55ef1d-7970-44e9-8941-953c80b6d811]
+[29264] 23303316-5a44-4461-b637-6fd346b1b863: stopped
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:50] "GET /status HTTP/1.1" 200 -
+[29264] 7d55ef1d-7970-44e9-8941-953c80b6d811: ready=False state=PENDING
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:09:53] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:09:54,014: INFO/PoolWorker-2] Task rncelery.tasks.start_simulation[7d55ef1d-7970-44e9-8941-953c80b6d811] succeeded in 5.02002072099s: None
+[2016-08-27 20:09:54,018: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[8d94e746-dfba-40de-ae76-521ceda4ab77]
+[29264] 7d55ef1d-7970-44e9-8941-953c80b6d811: stopped
+127.0.0.1 - - [27/Aug/2016 20:09:56] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:09:59,179: INFO/PoolWorker-3] Task rncelery.tasks.start_simulation[8d94e746-dfba-40de-ae76-521ceda4ab77] succeeded in 5.11879734101s: None
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: ready=True state=SUCCESS
+127.0.0.1 - - [27/Aug/2016 20:09:59] "GET /status HTTP/1.1" 200 -
+[29264] 8d94e746-dfba-40de-ae76-521ceda4ab77: stopped
+127.0.0.1 - - [27/Aug/2016 20:10:02] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[celery4;@v rncelery]$ bash run.sh
+
+ -------------- celery@v v4.0.0rc3 (0today8)
+---- **** -----
+--- * ***  * -- Linux-4.1.12-101.fc21.x86_64-x86_64-with-fedora-21-Twenty_One 2016-08-27 20:10:05
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         rncelery:0x7f580775f410
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     rpc://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> rncelery         exchange=rncelery(direct) key=rncelery
+
+
+[tasks]
+  . rncelery.tasks.start_simulation
+
+[2016-08-27 20:10:05,551: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2016-08-27 20:10:05,561: INFO/MainProcess] mingle: searching for neighbors
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[2016-08-27 20:10:06,593: INFO/MainProcess] mingle: all alone
+celery@v ready.
+[29486] 6ba93cca-2059-4c3d-bc25-ef086dd73092: started
+[2016-08-27 20:10:07,327: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[6ba93cca-2059-4c3d-bc25-ef086dd73092]
+[29486] 6ba93cca-2059-4c3d-bc25-ef086dd73092: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:10:07] "GET /start HTTP/1.1" 200 -
+[29486] c45107ad-1c37-4dc5-995c-13a11ff85ed5: started
+[29486] 6ba93cca-2059-4c3d-bc25-ef086dd73092: ready=False state=PENDING
+[29486] c45107ad-1c37-4dc5-995c-13a11ff85ed5: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:10:08] "GET /start HTTP/1.1" 200 -
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: started
+[29486] 6ba93cca-2059-4c3d-bc25-ef086dd73092: ready=False state=STARTED
+[29486] c45107ad-1c37-4dc5-995c-13a11ff85ed5: ready=False state=PENDING
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:10:09] "GET /start HTTP/1.1" 200 -
+[29486] 6ba93cca-2059-4c3d-bc25-ef086dd73092: ready=False state=PENDING
+[29486] c45107ad-1c37-4dc5-995c-13a11ff85ed5: ready=False state=PENDING
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:10:12] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:10:13,635: INFO/PoolWorker-1] Task rncelery.tasks.start_simulation[6ba93cca-2059-4c3d-bc25-ef086dd73092] succeeded in 5.02147790499s: None
+[2016-08-27 20:10:13,637: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[c45107ad-1c37-4dc5-995c-13a11ff85ed5]
+[29486] 6ba93cca-2059-4c3d-bc25-ef086dd73092: stopped
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:10:15] "GET /status HTTP/1.1" 200 -
+[29486] c45107ad-1c37-4dc5-995c-13a11ff85ed5: ready=False state=PENDING
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: ready=False state=PENDING
+127.0.0.1 - - [27/Aug/2016 20:10:18] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:10:18,699: INFO/PoolWorker-2] Task rncelery.tasks.start_simulation[c45107ad-1c37-4dc5-995c-13a11ff85ed5] succeeded in 5.019103631s: None
+[2016-08-27 20:10:18,702: INFO/MainProcess] Received task: rncelery.tasks.start_simulation[ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44]
+[29486] c45107ad-1c37-4dc5-995c-13a11ff85ed5: stopped
+127.0.0.1 - - [27/Aug/2016 20:10:21] "GET /status HTTP/1.1" 200 -
+[2016-08-27 20:10:23,766: INFO/PoolWorker-3] Task rncelery.tasks.start_simulation[ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44] succeeded in 5.02050963201s: None
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: ready=True state=SUCCESS
+127.0.0.1 - - [27/Aug/2016 20:10:24] "GET /status HTTP/1.1" 200 -
+[29486] ef4a29dd-42fb-4ab5-a3a9-ecb0ab20cc44: stopped
+127.0.0.1 - - [27/Aug/2016 20:10:27] "GET /status HTTP/1.1" 200 -
+
+worker: Warm shutdown (MainProcess)
+[celery4;@v rncelery]$
