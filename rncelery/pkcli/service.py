@@ -8,4 +8,9 @@ from __future__ import absolute_import, division, print_function
 import rncelery.server
 
 def default_command():
-    rncelery.server.app.run(host='0.0.0.0', port=8000, debug=1, threaded=True)
+    rncelery.server.app.run(
+        debug=True,
+        port=8000,
+        threaded=True,
+        use_reloader=False,
+    )

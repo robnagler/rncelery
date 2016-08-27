@@ -5,11 +5,12 @@ u"""Flask routes
 :license: http://www.apache.org/licenses/LICENSE-2.0.html
 """
 from __future__ import absolute_import, division, print_function
-from pykern.pkdebug import pkdc, pkdexc, pkdp
 import flask
 import celery
 import celery.states
+import os
 import rncelery.tasks
+import sys
 import threading
 
 app = flask.Flask(__name__)
@@ -28,32 +29,33 @@ def app_status():
 
 
 class _Celery(object):
-    _task = {}
+    _task = []
     _lock = threading.Lock()
 
     def __init__(self):
         with self._lock:
-            self.async_result = rncelery.tasks.start_simulation.apply_async()
-            tid = self.async_result.task_id
-            self._task[tid] = self
-            pkdp('{}: started', tid)
+            self.async_result = rncelery.tasks.start_simulation.apply_async(
+                queue='rncelery',
+            )
+            self._task.append(self)
+            _msg('{}: started', self.async_result.task_id)
 
     @classmethod
     def all_status(cls):
         """Job is actually running"""
         with cls._lock:
-            for tid in cls._task:
-                cls._status(tid)
+            for self in cls._task:
+                self._status()
 
-    @classmethod
-    def _status(cls, tid):
-        try:
-            self = cls._task[tid]
-        except KeyError:
-            pkdp('{}: not found', tid)
-            return
+    def _status(self):
         res = self.async_result
+        tid = self.async_result.task_id
         if not res or res.ready():
-            pkdp('{}: stopped', tid)
+            _msg('{}: stopped', tid)
+            self.__class__._task.remove(self)
             return
-        pkdp('{}: ready={} state={}', tid, res.ready(), res.state)
+        _msg('{}: ready={} state={}', tid, res.ready(), res.state)
+
+
+def _msg(fmt, *args):
+    sys.stderr.write(('[{}] ' + fmt + '\n').format(os.getpid(), *args))
