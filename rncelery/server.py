@@ -9,67 +9,51 @@ from pykern.pkdebug import pkdc, pkdexc, pkdp
 import flask
 import celery
 import celery.states
-
-_JID = 1
+import rncelery.tasks
+import threading
 
 app = flask.Flask(__name__)
 
-@app.route('/start', methods=('GET'))
+@app.route('/start')
 def app_start():
-    # _Celery().jid
-    return 'hello'
+    _Celery()
+    _Celery.all_status()
+    return ''
 
 
-@app.route('/status/<jid>', methods=('GET'))
-def app_status(jid):
-    return jid
+@app.route('/status')
+def app_status():
+    _Celery.all_status()
+    return ''
 
 
 class _Celery(object):
-    _job = {}
+    _task = {}
     _lock = threading.Lock()
 
     def __init__(self):
-        global _JID
         with self._lock:
-            self.jid = _JID++;
-            self.in_kill = False
-            self._job[self.jid] = self
-            self.data = data
-            self._job[self.jid] = self
-            self.async_result = None
-            # This command may blow up
-            self.async_result = self._start_job()
+            self.async_result = rncelery.tasks.start_simulation.apply_async()
+            tid = self.async_result.task_id
+            self._task[tid] = self
+            pkdp('{}: started', tid)
 
     @classmethod
-    def is_processing(cls, jid):
-        """Job is either in the queue or running"""
-        with cls._lock:
-            return bool(cls._find_job(jid))
-
-    @classmethod
-    def is_running(cls, jid):
+    def all_status(cls):
         """Job is actually running"""
         with cls._lock:
-            self = cls._find_job(jid)
-            if self is None:
-                return False
-            return self.async_result.status in (celery.states.STARTED, celery.states.RECEIVED)
-
+            for tid in cls._task:
+                cls._status(tid)
 
     @classmethod
-    def _find_job(cls, jid):
-            try:
-                self = cls._job[jid]
-            except KeyError:
-                return None
-            res = self.async_result
-            if res:
-                pkdp('{} {} {} {}', jid, res, res.ready(), res.state)
-            if not res or res.ready():
-                del self._job[jid]
-                return None
-            return self
-
-    def _start_job(self):
-        return rncelery.tasks.start_simulation.apply_async(args=[])
+    def _status(cls, tid):
+        try:
+            self = cls._task[tid]
+        except KeyError:
+            pkdp('{}: not found', tid)
+            return
+        res = self.async_result
+        if not res or res.ready():
+            pkdp('{}: stopped', tid)
+            return
+        pkdp('{}: ready={} state={}', tid, res.ready(), res.state)

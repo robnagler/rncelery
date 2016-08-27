@@ -27,4 +27,4 @@ celery.conf.update(
 
 @celery.task
 def start_simulation():
-    time.sleep(10)
+    time.sleep(5)
